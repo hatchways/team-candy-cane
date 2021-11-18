@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     },
     justifyContent: 'center',
     alignItems: 'center',
+    // background: 'blue',
   },
   authWrapper: {
     display: 'flex',
@@ -15,6 +16,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-between',
     flexDirection: 'column',
     minHeight: '100%',
+    background: 'blue',
   },
   welcome: {
     paddingBottom: 20,
