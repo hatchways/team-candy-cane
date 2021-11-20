@@ -1,5 +1,5 @@
 ### What this PR does (required):
-- list PR functionality here
+ it is Model for the request. it allows a request collection to be created in the database.
 
 ### Screenshots / Videos (front-end only):
 - Post at least one screenshot to show the feature in action. **Only required in front-end work**
