@@ -35,10 +35,13 @@ function App(): JSX.Element {
                 <Route exact path="/my-sitters">
                   <Dashboard />
                 </Route>
+                <Route exact path="/notifications">
+                  <Dashboard />
+                </Route>
                 <Route exact path="/edit-profile" component={EditMenu} />
 
                 <Route path="*">
-                  <Redirect to="/login" />
+                  <Redirect to="dashboard" />
                 </Route>
               </Switch>
             </SocketProvider>
