@@ -1,4 +1,3 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import { Formik, FormikHelpers } from 'formik';
@@ -7,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './useStyles';
 import * as Yup from 'yup';
-import login from '../../helpers/APICalls/login';
+import search from '../../helpers/APICalls/search';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
 import Image from '/Users/decagon/team-candy-cane/client/src/Images/doglanding.png';
@@ -21,7 +20,7 @@ export default function LandingPage(): JSX.Element {
     { place, drop }: { place: string; drop: string },
     { setSubmitting }: FormikHelpers<{ place: string; drop: string }>,
   ) => {
-    login(place, drop).then((data) => {
+    search(place, drop).then((data) => {
       if (data.error) {
         setSubmitting(false);
         updateSnackBarMessage(data.error.message);
@@ -39,8 +38,6 @@ export default function LandingPage(): JSX.Element {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-
       <Grid item className={classes.root2}>
         <Typography className={classes.welcome} component="h1" variant="h5">
           Find the care your dog deserves
@@ -111,7 +108,7 @@ export default function LandingPage(): JSX.Element {
         </Formik>
       </Grid>
       <Grid item className={classes.root3}>
-        <img src={Image} className={classes.dog} />
+        <img src={Image} alt="landingPageImage" className={classes.dog} />
       </Grid>
     </Grid>
   );
