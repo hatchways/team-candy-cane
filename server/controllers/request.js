@@ -51,7 +51,7 @@ exports.createRequest = asyncHandler(async (req, res, next) => {
       end: new Date(end),
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       msg: "something went wrong.. try again",
     });
   }
