@@ -41,7 +41,7 @@ function App(): JSX.Element {
                 <Route exact path="/edit-profile" component={EditMenu} />
 
                 <Route path="*">
-                  <Redirect to="dashboard" />
+                  <Redirect to="/login" />
                 </Route>
               </Switch>
             </SocketProvider>
