@@ -9,11 +9,7 @@ export interface IPrivateRouteProps extends RouteProps {
 const PrivateRoute: React.FC<IPrivateRouteProps> = (props) => {
   const { loggedInUser } = useAuth();
 
-  return loggedInUser?.email ? (
-    <Route {...props} component={props.component} render={undefined} />
-  ) : (
-    <Redirect to="/login" />
-  );
+  return loggedInUser?.email ? <Route {...props} component={props.component} /> : <Redirect to="/login" />;
 };
 
 export default PrivateRoute;
