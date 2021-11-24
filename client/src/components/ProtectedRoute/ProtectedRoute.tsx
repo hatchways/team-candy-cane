@@ -12,7 +12,7 @@ const PrivateRoute: React.FC<IPrivateRouteProps> = (props) => {
   return loggedInUser?.email ? (
     <Route {...props} component={props.component} render={undefined} />
   ) : (
-    <Redirect to={{ pathname: props.redirectPath }} />
+    <Redirect to="/login" />
   );
 };
 
