@@ -25,7 +25,6 @@ const NavBar = (): JSX.Element => {
 
   if (loggedInUser === undefined) return <CircularProgress />;
   console.log(history.location.pathname);
-  console.log(loggedInUser);
 
   if (!loggedInUser && history.location.pathname !== '/login' && history.location.pathname !== '/signup') {
     history.push('/landing-page');

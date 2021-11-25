@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    // width: '100%',
   },
   root3: {
     width: '715px',
@@ -34,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '5px',
   },
   inputs: {
-    // marginTop: '.8rem',
     height: '2rem',
     padding: '5px',
   },
