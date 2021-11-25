@@ -8,7 +8,7 @@ const search = async (place: string, drop: string): Promise<AuthApiData> => {
     body: JSON.stringify({ place, drop }),
     credentials: 'include',
   };
-  return await fetch(`/auth/search`, fetchOptions)
+  return await fetch(`/search=${place} && ${drop}`, fetchOptions)
     .then((res) => res.json())
     .catch(() => ({
       error: { message: 'Unable to connect to server. Please try again' },
