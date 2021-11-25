@@ -24,10 +24,10 @@ const NavBar = (): JSX.Element => {
   }, [initSocket]);
 
   if (loggedInUser === undefined) return <CircularProgress />;
+  console.log(history.location.pathname);
+
   if (!loggedInUser && history.location.pathname !== '/login' && history.location.pathname !== '/signup') {
-    history.push('/login');
-    // loading for a split seconds until history.push works
-    return <CircularProgress />;
+    history.push('/landing-page');
   }
 
   return (

@@ -8,7 +8,6 @@ const generateToken = require("../utils/generateToken");
 // @access Public
 exports.registerUser = asyncHandler(async (req, res, next) => {
   const { username, email, password } = req.body;
-
   const emailExists = await User.findOne({ email });
 
   if (emailExists) {
@@ -23,7 +22,7 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
     throw new Error("A user with that username already exists");
   }
   const newProfile = await Profile.create();
-  const profile = newProfile._id
+  const profile = newProfile._id;
 
   const user = await User.create({
     username,
@@ -63,7 +62,7 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
-
+  console.log(user);
   if (user && (await user.matchPassword(password))) {
     const token = generateToken(user._id);
     const secondsInWeek = 604800;

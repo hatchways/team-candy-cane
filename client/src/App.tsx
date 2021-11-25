@@ -1,8 +1,10 @@
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core';
 import { theme } from './themes/theme';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/SignUp/SignUp';
+import Landingpage from './pages/LandingPage/LandingPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import NavBar from './components/NavBar/NavBar';
 import EditMenu from './components/EditProfile/EditMenu';
@@ -19,10 +21,14 @@ function App(): JSX.Element {
         <SnackBarProvider>
           <AuthProvider>
             <SocketProvider>
+              <CssBaseline />
+
               <NavBar />
+
               <Switch>
-                <Route exact path="/login" component={Login} />
+                <Route exact path="/landing-page" component={Landingpage} />
                 <Route exact path="/signup" component={Signup} />
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/dashboard">
                   <Dashboard />
                 </Route>

@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     },
     justifyContent: 'center',
     alignItems: 'center',
+    // background: 'blue',
   },
   authWrapper: {
     display: 'flex',
